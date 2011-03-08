@@ -96,7 +96,7 @@ module PagerDuty
 
       # If we asked for a page and didn't get it, we probably have to log in.
       # TODO: check for non-login pages, like server error pages.
-      while page.uri != uri
+      while page.uri.path != uri.path
         page = login page
       end
 
@@ -136,6 +136,7 @@ module PagerDuty
           @results << {'level' => level, 'label' => label, 'person' => person}
         end
       end
+      return @results
     end
 
     def label_for_level level
