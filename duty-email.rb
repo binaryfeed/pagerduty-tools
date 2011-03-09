@@ -43,7 +43,7 @@ optparse = OptionParser.new do |opts|
   opts.on( '-m', '--smtp-server HOSTNAME', 'Use HOSTNAME as the SMTP server.') do |host|
     options[:smtp_server] = host
   end
-
+  
   options[:subject] = 'you are now on pager duty'
   opts.on( '-s', '--subject SUBJECT', 'Use SUBJECT as the subject line of the email.') do |subject|
     options[:subject] = subject
