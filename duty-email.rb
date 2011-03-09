@@ -96,10 +96,8 @@ Thanks.
 
 MESSAGE_END
 
-#Net::SMTP.start(options[:smtp_server]) do |smtp|
-  #smtp.send_message message, 'noreply@change.org', recips
-#end
-puts recips.join(',')
-puts message
+Net::SMTP.start(options[:smtp_server]) do |smtp|
+  smtp.send_message message, 'noreply@change.org', recips
+end
 
 exit(0)
